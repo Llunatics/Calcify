@@ -11,13 +11,15 @@ int main(){
         cout << "1. Kalkulator Matematika Sederhana" << endl;
         cout << "2. Kalkulator Usia" << endl;
         cout << "3. Kalkulator Konversi Suhu" << endl;
-        cout << "4. Kalkulator Pajak Penghasilan" << endl;
+        cout << "4. Kalkulator Konversi Bilangan" << endl;
         cout << "5. Kalkulator BMI" << endl;
+        cout << "6. Keluar dari program" << endl;
         cout << "Silahkan Pilih Menu (1/2/3/4/5): ";
         cin >> menu;
 
         if(menu==1){
             int opsi;
+            cout << "Daftar Opsi" << endl;
             cout << "1. Kalkulator Penjumlahan" << endl;
             cout << "2. Kalkulator Pengurangan" << endl;
             cout << "3. Kalkulator Perkalian" << endl;
@@ -131,7 +133,7 @@ int main(){
             cout << "Anda termasuk kategori: " << kategori << "." << endl;
         }
 
-    else if(menu==3){
+        else if(menu==3){
             float suhu;
             char skalaAwal, skalaTujuan;
 
@@ -201,6 +203,99 @@ int main(){
             }
 
             cout << "Hasil konversi: " << suhu << " " << skalaTujuan << endl;
+        }
+
+        else if(menu==4){
+            int opsi;
+            int angka;
+
+                cout << "Daftar Opsi: " << endl;
+                cout << "1. Desimal ke Biner" << endl;
+                cout << "2. Desimal ke Oktal" << endl;
+                cout << "3. Desimal ke Heksadesimal" << endl;
+                cout << "4. Kembali ke Menu Sebelumnya" << endl;
+                cout << "5. Keluar Program" << endl;
+
+            do{
+                cout << "Silahkan Pilih Opsi (1/2/3/4/5): ";
+                cin >> opsi;
+
+                cout << "Masukkan angka desimal: ";
+                cin >> angka;
+
+                if(opsi==1){
+                    cout << "Dalam bentuk biner: ";
+                    while (angka > 0) {
+                        cout << angka % 2;
+                        angka = angka / 2;
+                    }
+                }
+
+                else if(opsi==2){
+                    cout << "Dalam bentuk oktal: ";
+                    while (angka > 0) {
+                        cout << angka % 8;
+                        angka = angka / 8;
+                    }
+                }
+
+                else if(opsi==3){
+                    cout << "Dalam bentuk heksadesimal: ";
+                    while (angka > 0) {
+                        int sisa = angka % 16;
+                        if (sisa < 10)
+                            cout << sisa;
+                        else
+                            cout << char('A' + sisa - 10);
+                        angka = angka / 16;
+                    }
+                }
+
+                else if(opsi==4){
+                    break;
+                }
+
+                else if(opsi==5){
+
+                    return 0;
+                }
+
+                else{
+                    cout << "Opsi yang anda pilih tidak valid" << endl;
+                }
+
+            } while(true);
+        }
+
+        else if(menu==5){
+            float beratBadan, tinggiBadan;
+            string kategori;
+
+            cout << "Silahkan Input Berat Badan (kg): ";
+            cin >> beratBadan;
+
+            cout << "Silahkan Input Tinggi Badan (cm): ";
+            cin >> tinggiBadan;
+
+            float tinggi = tinggiBadan/100;
+            float bmi = beratBadan / pow(tinggi, 2);
+
+            if(bmi < 17.0) {kategori = "Kurus (Kekurangan berat badan tingkat berat)";}
+            else if(bmi >= 17.0 && bmi <= 18.4) {kategori = "Kurus (Kekurangan berat badan tingkat ringan)";}
+            else if(bmi >= 18.5 && bmi <= 25.0) {kategori = "Normal";}
+            else if(bmi >= 25.1 && bmi < 27.0) {kategori = "Gemuk (Kekurangan berat badan tingkat ringan)";}
+            else if(bmi > 27.0) {kategori = "Gemuk (Kekurangan berat badan tingkat berat)";}
+
+            cout << "BMI Anda Adalah: " << bmi << endl;
+            cout << "Anda Termasuk Kategori: " << kategori <<endl;
+        }
+
+        else if(menu==6){
+            return 0;
+        }
+
+        else{
+            cout << "Menu yang anda pilih tidak valid" << endl;
         }
 
     } while(true);
