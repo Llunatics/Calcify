@@ -10,7 +10,7 @@ int main(){
         cout << "Daftar Menu" << endl;
         cout << "1. Kalkulator Matematika Sederhana" << endl;
         cout << "2. Kalkulator Usia" << endl;
-        cout << "3. Kalkulator Konversi Sistem Bilangan" << endl;
+        cout << "3. Kalkulator Konversi Suhu" << endl;
         cout << "4. Kalkulator Pajak Penghasilan" << endl;
         cout << "5. Kalkulator BMI" << endl;
         cout << "Silahkan Pilih Menu (1/2/3/4/5): ";
@@ -132,133 +132,75 @@ int main(){
         }
 
     else if(menu==3){
-        int opsi;
-            cout << "1. Konversi Biner" << endl;
-            cout << "2. Konversi Octal" << endl;
-            cout << "3. Konversi Decimal" << endl;
-            cout << "4. Konversi Hexadecimal" << endl;
-            cout << "5. Kembali ke Menu Sebelumnya" << endl;
-            cout << "6. Keluar Program" << endl;
+            float suhu;
+            char skalaAwal, skalaTujuan;
 
-            do{
-                cout << "Silahkan Pilih Opsi (1/2/3/4/5/6): ";
-                cin >> opsi;
+            cout << "Skala Suhu: " << endl;
+            cout << "1. Celcius" << endl;
+            cout << "2. Fahrenheit" << endl;
+            cout << "3. Kelvin" << endl;
+            cout << "4. Reamur" << endl;
+            cout << "Masukkan skala awal (C/F/K/R): ";
+            cin >> skalaAwal;
+            cout << "Masukkan suhu: ";
+            cin >> suhu;
 
-                if(opsi==1){
-                    float biner;
-                    cout << "Silahkan Input Bilangan Biner: ";
-                    cin >> biner;
+            cout << "Masukkan skala tujuan (C/F/K/R): ";
+            cin >> skalaTujuan;
 
-                    int tujuan;
-                    cout << "1. Octal" << endl;
-                    cout << "2. Decimal" << endl;
-                    cout << "3. Hexadecimal" << endl;
-                    cout << "Pilih Sistem Bilangan Tujuan: ";
-                    cin >> tujuan;
+            if (skalaAwal == 'C' || skalaAwal == 'c' && skalaTujuan == 'F' || skalaTujuan == 'f') {
+                suhu = (suhu * 9/5) + 32;
+            } 
 
-                    if(tujuan==1){
-                        
-                    }
+            else if (skalaAwal == 'C' || skalaAwal == 'c' && skalaTujuan == 'K' || skalaTujuan == 'k') {
+                suhu = suhu + 273.15;
+            } 
 
-                    else if(tujuan==2){
-                        
-                    }
+            else if (skalaAwal == 'C' || skalaAwal == 'c' && skalaTujuan == 'R' || skalaTujuan == 'r') {
+                suhu = suhu * 4/5;
+            } 
+            
+            else if (skalaAwal == 'F' || skalaAwal == 'f' && skalaTujuan == 'C' || skalaTujuan == 'c') {
+                suhu = (suhu - 32) * 5/9;
+            } 
 
-                    else if(tujuan==3){
+            else if (skalaAwal == 'F' || skalaAwal == 'f' && skalaTujuan == 'K' || skalaTujuan == 'k') {
+                suhu = (suhu + 459.67) * 5/9;
+            } 
 
-                    }
+            else if (skalaAwal == 'F' || skalaAwal == 'f' && skalaTujuan == 'R' || skalaTujuan == 'r') {
+                suhu = (suhu - 32) * 4/9;
+            }
 
-                }
+            else if (skalaAwal == 'K' || skalaAwal == 'k' && skalaTujuan == 'C' || skalaTujuan == 'c') {
+                suhu = suhu - 273.15;
+            } 
+            
+            else if (skalaAwal == 'K' || skalaAwal == 'k' && skalaTujuan == 'F' || skalaTujuan == 'f') {
+                suhu = (suhu * 9/5) - 459.67;
+            } 
 
-                else if(opsi==2){
-                    float octal;
-                    cout << "Silahkan Input Bilangan octal: ";
-                    cin >> octal;
+            else if (skalaAwal == 'K' || skalaAwal == 'k' && skalaTujuan == 'R' || skalaTujuan == 'r') {
+                suhu = (suhu - 273.15) * 4/5;
+            }
+            
+            else if (skalaAwal == 'R' || skalaAwal == 'r' && skalaTujuan == 'C' || skalaTujuan == 'c') {
+                suhu = suhu * 5/4;
+            } 
 
-                    int tujuan;
-                    cout << "1. Biner" << endl;
-                    cout << "2. Decimal" << endl;
-                    cout << "3. Hexadecimal" << endl;
-                    cout << "Pilih Sistem Bilangan Tujuan: ";
-                    cin >> tujuan;
+            else if (skalaAwal == 'R' || skalaAwal == 'r' && skalaTujuan == 'F' || skalaTujuan == 'f') {
+                suhu = (suhu * 9/4) + 32;
+            }
 
-                    if(tujuan==1){
-                        
-                    }
+            else if (skalaAwal == 'R' || skalaAwal == 'r' && skalaTujuan == 'K' || skalaTujuan == 'k') {
+                suhu = (suhu * 5/4) + 273.15;
+            }
+            
+            else if (skalaAwal != skalaTujuan) {
+                cout << "Konversi tidak valid." << endl;
+            }
 
-                    else if(tujuan==2){
-                        
-                    }
-
-                    else if(tujuan==3){
-
-                    }
-                }
-
-                else if(opsi==3){
-                    float decimal;
-                    cout << "Silahkan Input Bilangan Decimal: ";
-                    cin >> decimal;
-
-                    int tujuan;
-                    cout << "1. Biner" << endl;
-                    cout << "2. Octal" << endl;
-                    cout << "3. Heksadesimal" << endl;
-                    cout << "Pilih Sistem Bilangan Tujuan: ";
-                    cin >> tujuan;
-
-                    if(tujuan==1){
-                        
-                    }
-
-                    else if(tujuan==2){
-                        
-                    }
-
-                    else if(tujuan==3){
-
-                    }
-                }
-
-                else if(opsi==4){
-                   float hexadecimal;
-                    cout << "Silahkan Input Bilangan Hexadecimal: ";
-                    cin >> hexadecimal;
-
-                    int tujuan;
-                    cout << "1. Biner" << endl;
-                    cout << "2. Octal" << endl;
-                    cout << "3. Decimal" << endl;
-                    cout << "Pilih Sistem Bilangan Tujuan: ";
-                    cin >> tujuan;
-
-                    if(tujuan==1){
-                        
-                    }
-
-                    else if(tujuan==2){
-                        
-                    }
-
-                    else if(tujuan==3){
-
-                    }
-                }
-
-                else if(opsi==5){
-                   break;
-                }
-
-                else if(opsi==6){
-
-                    return 0;
-                }
-
-                else{
-                    cout << "Opsi yang anda pilih tidak valid" << endl;
-                }
-
-            } while(true);
+            cout << "Hasil konversi: " << suhu << " " << skalaTujuan << endl;
         }
 
     } while(true);
