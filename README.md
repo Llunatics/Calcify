@@ -1,5 +1,8 @@
 # UTS-Bahasa-Pemrograman
 
+Andiko Ramadani
+NIM : 3337230003
+
 **Kalkulator (Plan)**
 1. Kalkulator Matematika Sederhana
    + Kalkulator Penjumlahan
