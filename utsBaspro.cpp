@@ -3,81 +3,90 @@
 using namespace std;
 
 int main(){
-    cout << "Andiko Ramadani, NIM: 3337230003" << endl; 
+    cout << "Andiko Ramadani\nNIM: 3337230003\nProdi:  Informatika (C)\nUTS Bahasa Pemrograman\nCalcify (Kalkulator Multi Fungsi)" << endl; 
 
     do{
         int menu;
-        cout << "Daftar Menu" << endl;
+        cout << "\n====================Calcify====================" << endl;
+        cout << "Daftar Menu: " << endl;
         cout << "1. Kalkulator Matematika Sederhana" << endl;
         cout << "2. Kalkulator Usia" << endl;
         cout << "3. Kalkulator Konversi Suhu" << endl;
         cout << "4. Kalkulator Konversi Bilangan" << endl;
         cout << "5. Kalkulator BMI" << endl;
         cout << "6. Keluar dari program" << endl;
-        cout << "Silahkan Pilih Menu (1/2/3/4/5): ";
+        cout << "Silahkan Pilih Menu (1/2/3/4/5/6): ";
         cin >> menu;
 
         if(menu==1){
-            int opsi;
-            cout << "Daftar Opsi" << endl;
-            cout << "1. Kalkulator Penjumlahan" << endl;
-            cout << "2. Kalkulator Pengurangan" << endl;
-            cout << "3. Kalkulator Perkalian" << endl;
-            cout << "4. Kalkulator Pembagian" << endl;
-            cout << "5. Kalkulator Hasil Bagi" << endl;
-            cout << "6. Kembali ke Menu Sebelumnya" << endl;
-            cout << "7. Keluar Program" << endl;
-
             do{
-                cout << "Silahkan Pilih Opsi (1/2/3/4/5/6/7): ";
+                int opsi;
+                cout << "\n=============Kalkulator Matematika=============" << endl;
+                cout << "Daftar Opsi: " << endl;
+                cout << "1. Kalkulator Penjumlahan" << endl;
+                cout << "2. Kalkulator Pengurangan" << endl;
+                cout << "3. Kalkulator Perkalian" << endl;
+                cout << "4. Kalkulator Pembagian" << endl;
+                cout << "5. Kalkulator Hasil Bagi" << endl;
+                cout << "6. Kalkulator Pangkat" << endl;
+                cout << "7. Kalkulator Akar Kuadrat" << endl;
+                cout << "8. Kalkulator Faktorial" << endl;
+                cout << "9. Kembali ke Menu Sebelumnya" << endl;
+                cout << "10. Keluar Program" << endl;
+                cout << "Silahkan Pilih Opsi (1/2/3/4/5/6/7/8/9/10): ";
                 cin >> opsi;
 
                 if(opsi==1){
                     float a, b, hasil;
+                    cout << "\n==================Penjumlahan==================" << endl;
                     cout << "Masukkan Nilai A: ";
                     cin >> a;
                     cout << "Masukkan Nilai B: ";
                     cin >> b;
 
                     hasil = a+b;
-                    cout << "Hasil Penjumlahan adalah: " << hasil << endl;
+                    cout << "Hasil penjumlahan adalah: " << hasil << endl;
                 }
 
                 else if(opsi==2){
                     float a, b, hasil;
+                    cout << "\n==================Pengurangan==================" << endl;
                     cout << "Masukkan Nilai A: ";
                     cin >> a;
                     cout << "Masukkan Nilai B: ";
                     cin >> b;
 
                     hasil = a-b;
-                    cout << "Hasil Pengurangan adalah: " << hasil << endl;
+                    cout << "Hasil pengurangan adalah: " << hasil << endl;
                 }
 
                 else if(opsi==3){
                     float a, b, hasil;
+                    cout << "\n==============Perkalian==============" << endl;
                     cout << "Masukkan Nilai A: ";
                     cin >> a;
                     cout << "Masukkan Nilai B: ";
                     cin >> b;
 
                     hasil = a*b;
-                    cout << "Hasil Perkalian adalah: " << hasil << endl;
+                    cout << "Hasil perkalian adalah: " << hasil << endl;
                 }
 
                 else if(opsi==4){
                     float a, b, hasil;
+                    cout << "\n===================Pembagian===================" << endl;
                     cout << "Masukkan Nilai A: ";
                     cin >> a;
                     cout << "Masukkan Nilai B: ";
                     cin >> b;
 
                     hasil = a/b;
-                    cout << "Hasil Pembagian adalah: " << hasil << endl;
+                    cout << "Hasil pembagian adalah: " << hasil << endl;
                 }
 
                 else if(opsi==5){
                     int a, b, hasil;
+                    cout << "\n===================Hasil Bagi===================" << endl;
                     cout << "Masukkan Nilai A: ";
                     cin >> a;
                     cout << "Masukkan Nilai B: ";
@@ -88,11 +97,44 @@ int main(){
                 }
 
                 else if(opsi==6){
-                    break;
+                    float a, b, hasil;
+                    cout << "\n====================Pangkat====================" << endl;
+                    cout << "Masukkan Nilai: ";
+                    cin >> a;
+                    cout << "Masukkan Pangkat: ";
+                    cin >> b;
+
+                    hasil = pow(a, b);
+                    cout << "Hasil pangkat " << b << " dari " << a << " adalah: " << hasil << endl;
                 }
 
                 else if(opsi==7){
+                    float a, hasil;
+                    cout << "\n==================Akar Kuadrat==================" << endl;
+                    cout << "Masukkan Nilai: ";
+                    cin >> a;
 
+                    hasil = sqrt(a);
+                    cout << "Akar kuadrat dari " << a << " adalah: " << hasil << endl;
+                }
+
+                else if(opsi==8){
+                    int a, hasil=1;
+                    cout << "\n===================Faktorial===================" << endl;
+                    cout << "Masukkan Nilai: ";
+                    cin >> a;
+
+                    for(int i=1; i<=a; i++){
+                        hasil = hasil * i;
+                    }
+                    cout << "Nilai faktorial dari " << a << " adalah: " << hasil << endl;
+                }
+
+                else if(opsi==9){
+                    break;
+                }
+
+                else if(opsi==10){
                     return 0;
                 }
 
@@ -106,6 +148,7 @@ int main(){
         else if(menu==2){
             int tanggal, bulan, tahun;
             string kategori;
+            cout << "\n=================Kalkulator Usia=================" << endl;
             cout << "Masukkan tanggal lahir (dd mm yyyy): ";
             cin >> tanggal >> bulan >> tahun;
 
@@ -136,6 +179,9 @@ int main(){
         else if(menu==3){
             float suhu;
             char skalaAwal, skalaTujuan;
+            cout << "\n============Kalkulator Konversi Suhu============" << endl;
+            cout << "Masukkan suhu: ";
+            cin >> suhu;
 
             cout << "Skala Suhu: " << endl;
             cout << "1. Celcius" << endl;
@@ -144,9 +190,6 @@ int main(){
             cout << "4. Reamur" << endl;
             cout << "Masukkan skala awal (C/F/K/R): ";
             cin >> skalaAwal;
-            cout << "Masukkan suhu: ";
-            cin >> suhu;
-
             cout << "Masukkan skala tujuan (C/F/K/R): ";
             cin >> skalaTujuan;
 
@@ -206,17 +249,16 @@ int main(){
         }
 
         else if(menu==4){
-            int opsi;
-            int angka;
-
+            do{
+                int opsi;
+                int angka;
+                cout << "\n==========Kalkulator Konversi Bilangan==========" << endl;
                 cout << "Daftar Opsi: " << endl;
                 cout << "1. Desimal ke Biner" << endl;
                 cout << "2. Desimal ke Oktal" << endl;
                 cout << "3. Desimal ke Heksadesimal" << endl;
                 cout << "4. Kembali ke Menu Sebelumnya" << endl;
                 cout << "5. Keluar Program" << endl;
-
-            do{
                 cout << "Silahkan Pilih Opsi (1/2/3/4/5): ";
                 cin >> opsi;
 
@@ -270,10 +312,9 @@ int main(){
         else if(menu==5){
             float beratBadan, tinggiBadan;
             string kategori;
-
+            cout << "\n=================Kalkulator BMI=================" << endl;
             cout << "Silahkan Input Berat Badan (kg): ";
             cin >> beratBadan;
-
             cout << "Silahkan Input Tinggi Badan (cm): ";
             cin >> tinggiBadan;
 
@@ -283,8 +324,8 @@ int main(){
             if(bmi < 17.0) {kategori = "Kurus (Kekurangan berat badan tingkat berat)";}
             else if(bmi >= 17.0 && bmi <= 18.4) {kategori = "Kurus (Kekurangan berat badan tingkat ringan)";}
             else if(bmi >= 18.5 && bmi <= 25.0) {kategori = "Normal";}
-            else if(bmi >= 25.1 && bmi < 27.0) {kategori = "Gemuk (Kekurangan berat badan tingkat ringan)";}
-            else if(bmi > 27.0) {kategori = "Gemuk (Kekurangan berat badan tingkat berat)";}
+            else if(bmi >= 25.1 && bmi < 27.0) {kategori = "Gemuk (kelebihan berat badan tingkat ringan)";}
+            else if(bmi > 27.0) {kategori = "Gemuk (kelebihan berat badan tingkat berat)";}
 
             cout << "BMI Anda Adalah: " << bmi << endl;
             cout << "Anda Termasuk Kategori: " << kategori <<endl;
